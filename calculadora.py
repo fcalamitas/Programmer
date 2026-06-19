@@ -1,23 +1,71 @@
+print("Welcome to Renan's Calculator")
+print("=====Tutorial=====")
+print("Operations:")
+print("- Sum: Type '+' to sum")
+print("- Subtractio: Type '-' to subtract")
+print("- Multiplication: Type '*' to multiply")
+print("- Division: Type '/' to divide ")
+print("- Percentage: Type %")
+while True:
+    try:
+        number1 = float(input("Number 1:"))
+        break
+    except ValueError:
+        print("Please type a valid number")
+        break
 while True:
     operation = input("Operation:\n")
     if operation == "+":
-        number2 = float(input("\n"))
+        while True:
+            try:
+                number2 = float(input("\n"))
+                break
+            except ValueError:
+                print("Please type a valid input")
+                break
         number1 = number1 + number2 
         print(f"{number1}")
     elif operation == "-":
-        number2 = float(input("\n"))
+        while True:
+            try:
+                number2 = float(input("\n"))
+                break
+            except: 
+                print("Please type a valid input")
+                break
         number1 = number1 - number2 
         print(f"{number1}")
     elif operation == "*":
-        number2 = float(input("\n"))
+        while True:
+            try:
+                number2 = float(input("\n"))
+                break
+            except:
+                print("Please type a valid number")
         number1 = number1 * number2
         print(f"{number1}")
     elif operation == "/":
-        number2 = float(input("\n"))
+        while True:
+            try:
+                number2 = float(input("\n"))
+                break
+            except:
+                print("Please type a valid input")
+                break
         number1 = number1 / number2
         print(f"{number1}")
-    elif operation or number1 or number2 == "out":
+    elif operation == "%":
+        while True:
+            try:
+                number2 = float(input("\n"))
+                break
+            except: 
+                print("Please type a valid input")
+                break
+        number1 = number1 * (number2/100)
+        print(f"{number1}")
+    elif operation == "out":
         break
-    elif operation != "+" or "-" or "*" or "/" or "out":
+    elif operation not in ["+", "-", "*", "/","out"]:
         print("Please type a valid input")
         break
